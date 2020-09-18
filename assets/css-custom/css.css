@@ -1,0 +1,52 @@
+
+
+.color{ color: rgb(0, 204, 255);}
+.colorB{ background-color: rgba(0, 0, 0, 0.178);}
+.div1
+{
+    border-radius: 5px;
+    border: 2px solid gray ;
+    background-color: rgba(204, 31, 152, 0.384);
+    background-clip: padding-box;
+}
+.div2
+{
+    border-bottom: 46px solid rgba(0, 201, 77, 0.100) ;
+    background-color: rgba(204, 31, 152, 0.5);
+}
+.div3
+{
+    border-top: 50px solid rgba(0, 61, 85, 0.100) ;
+    background-color: rgba(0, 201, 77, 0.5);
+    border-bottom: 31px solid  rgb(21, 163, 75);
+}
+.div4
+{
+    border-bottom: 20px solid rgba(0, 143, 199, 0.205);
+    background-color: rgba(0, 143, 199, 0.5);
+}
+.div5
+{
+    background-color: rgba(111, 25, 209, 0.795);
+}
+.Negrito
+{
+    font-weight: bolder;
+}
+.m1
+{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.m3
+{
+    margin-bottom: 10%;
+}
+@font-face{
+     font-family: Mine;
+    src: url('../font/minecraft-pe.ttf')
+  }
+  .f{
+      font-family: Mine;
+      color: yellowgreen;
+    }
