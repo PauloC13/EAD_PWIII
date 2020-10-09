@@ -37,6 +37,23 @@ $(function(){
                         title: 'Campo Senha é obrigatório'
                     })
                 }
+                if(data == "ErroLogin"){
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        onOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })  
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Email ou senha não encontrados'
+                    })
+                }
                 if(data == "sucess"){
                     const Toast = Swal.mixin({
                         toast: true,
@@ -51,7 +68,7 @@ $(function(){
                     })  
                     Toast.fire({
                         icon: 'success',
-                        title: 'Cadastro realizado com sucesso'
+                        title: 'Login realizado com sucesso'
                     })
                 }
                 

@@ -5,10 +5,12 @@ class Login extends CI_Controller
 {
     public function validarLogin()
     {
-        $user = $this->input->post('user');
+        $email = $this->input->post('user');
         $senha = $this->input->post('pass');
 
-        if(empty($user)){
+        $this->load->model('LoginModel');
+
+        if(empty($email)){
             echo "ErroUser";
             exit();
         }
@@ -16,7 +18,14 @@ class Login extends CI_Controller
             echo "ErroPass";
             exit();
         }
-        echo "sucess";
-
+        $resultado = $this->LoginModel->LoginUsuario($email, $senha);
+        if($resultado != ""){
+            echo "sucess";
+            die();
+        }
+        if(empty($resultado)){
+            echo "ErroLogin";
+            die();
+        }
     }
 }
