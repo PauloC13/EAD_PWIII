@@ -9,43 +9,80 @@ class ValidarCadastros extends CI_Controller
         $dados = [
             'nome' => $this->input->post('nome'),
             'email' => $this->input->post('email'),
-            'user' => $this->input->post('user'),
+            'username' => $this->input->post('user'),
             'senha' => $this->input->post('pass'),
             'cpf' => $this->input->post('cpf'),
             'tipo' => "cliente",
     ];
     $confiSenha = $this->input->post("pass2");
-    if(empty($dados["nome"])){
+    $this->load->model('CadastrosModel');
+
+    if(empty($dados['nome'])){
         echo "ErroNome";
-        exit();
+        die();
     }
-    if(empty($dados["cpf"])){
+
+    if(empty($dados['cpf'])){
         echo "ErroCPF";
-        exit();
+        die();
     }
-    if(empty($dados["user"])){
+
+    $resultado = $this->CadastrosModel->VerificarCPF($dados['cpf']);
+
+    if($resultado == ""){
+        echo "ErroCPFExiste";
+        die();
+    }
+
+    if(empty($dados['username'])){
         echo "ErroUser";
-        exit();
+        die();
     }
-    if(empty($dados["email"])){
+
+    $resultado = $this->CadastrosModel->VerificarUserName($dados['username']);
+
+    if($resultado != ""){
+        echo "ErroUserExiste";
+        die();
+    }
+
+    if(empty($dados['email'])){
         echo "ErroEmail";
-        exit();
+        die();
     }
-    if(empty($dados["senha"])){
+
+    $resultado = $this->CadastrosModel->VerificarEmail($dados['email']);
+
+    if($resultado != ""){
+        echo "ErroEmailExiste";
+        die();
+    }
+
+    if(empty($dados['senha'])){
         echo "ErroSenha";
-        exit();
+        die();
     }
+
     if(empty($confiSenha)){
         echo "ErroSenha2";
-        exit();
+        die();
     }
-    if($confiSenha != $dados["senha"]){
+
+    if($confiSenha != $dados['senha']){
         echo "ErroSenhaNaoConfere";
+        die();
+    }
+
+    if($this->CadastrosModel->CadastrarUsuario($dados)){
+        //$this->load->library('session');
+        //$this->session->email = $dados['email'];
+        echo "sucess";
+        die();
+    }
+    else{
+        echo "ErroCadastro";
         exit();
     }
-    if(empty($tipo)){
-    $tipo = "cliente";
     }
-    echo "sucess";
 }
-}
+?>

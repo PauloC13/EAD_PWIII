@@ -9,7 +9,7 @@
     <style>
         body
         {
-            background-image: url('./img/luky.jpg');
+            background-image: url(<?php echo base_url("assets/img/luky.jpg")?>);
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -25,12 +25,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-      <a class="nav-link text-center btn-outline-dark Negrito" href="<?php echo base_url('index.php/Welcome/cadastro')?>">Cadastro</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link text-center btn-outline-dark Negrito" href="<?php echo base_url('index.php/Welcome/login')?>">Login</a>
+      <a class="nav-link text-center btn-outline-dark Negrito" href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a>
     </li>
-      </li>
     </ul>
   </div>
 </nav>

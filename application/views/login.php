@@ -32,7 +32,7 @@
                     <a class="nav-link lead" style="font-size: 14px" href="#">Esqueci meu email</a>
                 </div>
                 <div class="form-row col-10 mx-auto mb-5 ">
-                <a class="nav-link col-6 lead text-center Negrito" href="./cadastro.php">Criar Conta</a>
+                <a class="nav-link col-6 lead text-center Negrito" href="index.php/Welcome/cadastro">Criar Conta</a>
                     <input class="form-control col-6 mx-auto btn-outline-primary" type="submit" value="ENTRAR">
                 </div>
             </div>
