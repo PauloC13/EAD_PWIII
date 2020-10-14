@@ -229,7 +229,7 @@ $(function(){
                     })  
                     Toast.fire({
                         icon: 'success',
-                        title: 'Logado'
+                        title: 'Cadastro realizado com sucesso'
                     })
                 }
             },//success

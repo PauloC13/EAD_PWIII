@@ -44,5 +44,6 @@
     <script src='<?php echo base_url("assets/node_modules/popper.js/dist/umd/popper.js")?>'></script>
     <script src='<?php echo base_url("assets/node_modules/bootstrap/dist/js/bootstrap.js")?>'></script>
     <script src='<?php echo base_url("assets/node_modules/sweetalert2/dist/sweetalert2.all.js")?>'></script>
+    <script src='<?php echo base_url("assets/jvscript/validacao.js")?>'></script>
 </body>
 </html>

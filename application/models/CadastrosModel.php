@@ -25,5 +25,9 @@ class CadastrosModel extends CI_Model {
         $resultado = $this->db->get('Usuario')->row_array();
         return $resultado;
     }
+    public function TelaHome()
+    {
+        $this->load->view('home');
+    }
 }
 ?>

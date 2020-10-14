@@ -29,7 +29,7 @@ class ValidarCadastros extends CI_Controller
 
     $resultado = $this->CadastrosModel->VerificarCPF($dados['cpf']);
 
-    if($resultado == ""){
+    if($resultado != ""){
         echo "ErroCPFExiste";
         die();
     }
